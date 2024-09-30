@@ -74,6 +74,115 @@ body {
     padding: 0em 3em;
 }
 
+#navbar .cart-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#navbar #cart-modal{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    z-index: 60;
+    top: 140%;
+    right: 0%;
+    padding: 20px 0px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    background-color: white;
+    flex-direction: column;
+}
+
+#navbar #cart-modal h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0px 20px 12px;
+    border-bottom: 1px solid var(--color-grayish-blue);
+}
+
+#navbar #cart-modal #empty-cart-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+}
+
+#navbar #cart-modal #empty-cart-info h4{
+    color: var(--color-dark-grayish-blue);
+}
+
+#navbar #cart-modal #cart-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    height: 100%;
+}
+
+#navbar #cart-modal #cart-info img{
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    border: none;
+}
+#navbar #cart-modal #cart-info img:hover{border: none;}
+
+#navbar #cart-modal #cart-info .cart-item-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 12px;
+}
+
+#cart-modal #checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cart-modal #checkout #checkout-btn{
+    width: 93%;
+    padding: 12px 10px;
+    background-color: var(--color-orange);
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+#navbar #cart-modal #cart-info .cart-item-details span{
+    color: black;
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-left: 10px;
+}
+
+#navbar #cart-modal #cart-info .cart-item-details{
+    color: var(--color-dark-grayish-blue);
+}
+
+@media (max-width:600px){
+    #navbar #cart-modal{
+        right: -140%;
+    }
+}
+
+
+#navbar #cart-modal #cart-info #cart-item-delete{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px;
+}
+
 #navbar #icon-menu{
     display: none;
     border: none;
