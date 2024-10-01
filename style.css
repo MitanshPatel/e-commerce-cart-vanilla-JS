@@ -5,7 +5,7 @@
     --color-dark-grayish-blue: hsl(219, 9%, 45%);
     --color-grayish-blue: hsl(220, 14%, 75%);
     --color-light-grayish-blue: hsl(223, 64%, 98%);
-  }
+}
 
 * {
     margin: 0;
@@ -82,8 +82,35 @@ body {
     position: relative;
 }
 
-#navbar #cart-modal{
+#navbar .right-nav .cart-details #cart-count-notif{
+    position: absolute;
     display: none;
+    justify-content: center;
+    align-items: center;
+    top: 6px;
+    right: -3px;
+    background-color: var(--color-orange);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    font-size: 0.8em;
+}
+#navbar .hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#navbar .visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#navbar #cart-modal{
+    display: flex;
     position: absolute;
     width: 300px;
     height: 250px;

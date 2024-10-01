@@ -154,11 +154,14 @@ mobile_prev.addEventListener('click', () => {
 const cart_btn = document.getElementById('cart-icon');
 
 cart_btn.addEventListener('click', () => {
-    var temp = document.getElementById('cart-modal').style.display;
-    if (temp === 'none' || temp === '') {
-        document.getElementById('cart-modal').style.display = 'flex';
+    var temp = document.getElementById('cart-modal').classList.contains('hidden');
+    
+    if (temp) {
+        document.getElementById('cart-modal').classList.remove('hidden');
+        document.getElementById('cart-modal').classList.add('visible');
     } else {
-        document.getElementById('cart-modal').style.display = 'none';
+        document.getElementById('cart-modal').classList.remove('visible');
+        document.getElementById('cart-modal').classList.add('hidden');
     }
 });
 
@@ -192,6 +195,7 @@ add_cart.addEventListener('click', () => {
 });
 
 const modal = document.getElementById('cart-modal');
+const cart_count_notif = document.getElementById('cart-count-notif');
 
 if (cart.length === 0) {
     modal.innerHTML = "";
@@ -199,6 +203,8 @@ if (cart.length === 0) {
          <div id="empty-cart-info">
               <h4>Your cart is empty</h4>
             </div>`;
+
+    cart_count_notif.style.display = 'none';
 }
 
 const updateCart = () => {
@@ -208,6 +214,7 @@ const updateCart = () => {
          <div id="empty-cart-info">
               <h4>Your cart is empty</h4>
             </div>`;
+        cart_count_notif.style.display = 'none';
     } else {
         modal.innerHTML = "";
         modal.innerHTML = `
@@ -234,6 +241,8 @@ const updateCart = () => {
               <button id="checkout-btn">Checkout</button>
             </div>
         `;
+        cart_count_notif.style.display = 'flex';
+        cart_count_notif.innerHTML = `<p id="cart-count">${cart[0].quantity}</p>`
 
         const delete_btn = document.getElementById('cart-item-delete');
         delete_btn.addEventListener('click', () => {
